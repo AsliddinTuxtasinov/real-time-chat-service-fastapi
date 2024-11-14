@@ -4,7 +4,6 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from chat_app.config import get_settings
 
 # SQLAlchemy's connection URL
-# The URL format is: "postgresql+psycopg2://username:password@host:port/database_name"
 connection_url = get_settings().DATABASE_URL
 
 # Create an SQLAlchemy engine to connect to the PostgresSQL database.

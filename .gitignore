@@ -356,3 +356,4 @@ pyrightconfig.json
 auth_service.db
 nginx
 docker-compose.yml
+postgres_data

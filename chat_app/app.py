@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.websockets import WebSocket, WebSocketDisconnect
 
-from websocket_manager import WebSocketManager
+from chat_app.websocket_manager import WebSocketManager
 
 app = FastAPI()
 websocket_manager = WebSocketManager()

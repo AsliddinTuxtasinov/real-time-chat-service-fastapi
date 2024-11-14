@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     APP_DESCRIPTION: str = 'Real-time chat Service'
     ADMIN_EMAIL: str
     ADMIN_PASSWORD: str
-    DATABASE_URL: str
+    DATABASE_URL: str  # The URL format is: "postgresql+psycopg2://username:password@host:port/database_name"
 
     class Config:
         env_file = ".env"

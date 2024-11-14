@@ -22,7 +22,7 @@ class RoomMember(Base):
     id = Column(String, primary_key=True, default=lambda: str(uuid4()), unique=True)  # UUID as string
     joined_at = Column(DateTime(timezone=True), server_default=func.now())  # Timestamp when user is created
 
-    room_id = Column(String, ForeignKey("rooms.id"), nullable=False)
+    room_id = Column(String, ForeignKey("rooms.id", ondelete="CASCADE"), nullable=False)
     user_id = Column(String)  # UUID as string
 
     # Ensure room_id and user_id combination is unique
@@ -37,7 +37,7 @@ class Message(Base):
     id = Column(String, primary_key=True, default=lambda: str(uuid4()), unique=True)  # UUID as string
     created_at = Column(DateTime(timezone=True), server_default=func.now())  # Timestamp when user is created
 
-    room_id = Column(String, ForeignKey("rooms.id", ondelete="CASCADE"), nullable=False)
+    room_id = Column(String, ForeignKey("rooms.id", ondelete="SET NULL"), nullable=True)
     user_id = Column(String)  # UUID as string
     message = Column(Text)
 
