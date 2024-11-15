@@ -1,5 +1,9 @@
 # Chat Services
 ___
+> [!NOTE]  
+> - gRPC: Real-time communication between backend services (microservices). 
+> - WebSockets: Real-time communication between frontend and backend (for user interaction, like chat messages).
+
 
 Running project using that command line in the root directory
 ```commandline

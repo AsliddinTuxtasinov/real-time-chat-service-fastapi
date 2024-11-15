@@ -60,11 +60,21 @@ class ChatRoomsUtils(ChatUtils):
         new_member = self._room_members_table(room_id=room_id, user_id=user_id)
         return self.add_commit_refresh_db_data(entity=new_member)
 
+    def get_members_by_room_id(self, room_id):
+        # Get members by the room_id
+        member_objs = self._db_session.query(self._room_members_table).filter(
+            self._room_members_table.room_id == room_id
+        ).all()
+        return member_objs
+
 
 class ChatMessageUtils(ChatRoomsUtils):
 
-    def create_message(self):
-        pass
+    def get_all_messages_by_room_id(self, room_id):
+        messages = self._db_session.query(self._messages_table).filter(self._messages_table.room_id == room_id).all()
+        return messages
 
-    def create_reply_message(self):
+    def create_message(self, room_id, user_id, message):
+        # create message logic here
+        # send the message members logic here
         pass
